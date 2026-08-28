@@ -1,0 +1,109 @@
+.menu i {
+    position: fixed;
+    left: 16px;
+    top: 3%;
+    transform: translateY(-50%);
+    color: #00095b;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.logout i {
+    position: absolute;
+    right: 16px;
+    top: 3%;
+    transform: translateY(-50%);
+    color: #00095b;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menuLateral {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding-top: 60px;
+}
+
+.menu-entrando {
+  animation: deslizarEntrada 0.3s ease-out forwards;
+}
+
+/* Classe acionada pelo 'animate.leave' (Menu sumindo) */
+.menu-saindo {
+  animation: deslizarSaida 0.25s ease-in forwards;
+}
+
+/* Animações nativas com Keyframes CSS */
+@keyframes deslizarEntrada {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes deslizarSaida {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* Escurece o fundo levemente (40%) */
+  backdrop-filter: blur(5px);           /* Aplica o efeito de desfoque nos elementos de trás */
+  z-index: 998;                         /* Fica abaixo do menu (999) e do botão (1000) */
+}
+
+/* Animações nativas para o efeito de desfoque/esmaecimento suave */
+.fundo-entrando { animation: fadeEntrada 0.3s ease-out forwards; }
+.fundo-saindo { animation: fadeSaida 0.25s ease-in forwards; }
+
+@keyframes fadeEntrada {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeSaida {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.menuLateral img {
+    width: 120px;
+    padding-left: 25%;
+    padding-bottom: 10px;
+}
+
+.menuLateral a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: "Elms sans";
+    font-size: 22px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.menuLateral a:hover {
+    color: #00095b;
+    border-left: 3px solid #00095b;
+    }
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

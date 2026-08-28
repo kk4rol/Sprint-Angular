@@ -1,0 +1,199 @@
+
+section {
+    min-height: 100vh;
+    font-family: "Elms sans";
+    background-image:
+        linear-gradient(
+            rgba(40, 88, 165, 0.75),
+            rgba(40, 88, 165, 0.75)
+        ),
+        url("/img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 800px;
+    height: 530px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.imagemLogin {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #123f82;
+    overflow: hidden;
+}
+
+.imagemLogin img {
+    width: 95%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: white;
+    height: 100%;
+    padding: 40px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: 9%;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    position: static;
+}
+
+h3 {
+    font-family: "Elms sans";
+    color: #00095b;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.formLogin form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.campo {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.campo input {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    font-family: "Elms Sans";
+    padding-left: 45px;
+    padding-right: 15px;
+    border: none;
+    background-color: #f6f6f6;
+    border-radius: 2px;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.campo input:focus {
+    border-color: #f1f1f1;
+    box-shadow: 0 0 0 1px #00095b;
+}
+
+.campo i{
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00095b;
+    font-size: 17px;
+    z-index: 1;
+}
+
+.loginAutomatico {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginAutomatico span {
+    font-size: 14px;
+    font-family: "Elms Sans";
+    color: gray;
+    font-weight: 500;
+}
+
+.loginAutomatico i {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #285db0;
+    color: white;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Elms Sans";
+    font-size: 15px;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+    background-color: #00095b;
+    cursor: pointer;
+}
+
+@media (max-width: 850px) {
+
+    main {
+        width: 90%;
+        height: 530px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+
+        min-height: 500px;
+    }
+
+    .imagemLogin {
+        display: none;
+    }
+
+    .formLogin {
+        width: 100%;
+    }
+
+}
