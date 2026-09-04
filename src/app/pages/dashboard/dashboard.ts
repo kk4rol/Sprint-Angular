@@ -12,20 +12,20 @@ import { CommonModule } from '@angular/common';
 })
 export class Dashboard {
 
-  public veiculos:Veiculo[]=[];
+  // public veiculos:Veiculo[]=[];
 
-  constructor(private dados:Dados){}
+  // constructor(private dados:Dados){}
 
-  buscarVeiculos():void{
+  // buscarVeiculos():void{
 
-    this.dados.getVeiculos().subscribe
-    (
-      (dadosrecebidos) => {
-        this.veiculos = dadosrecebidos;
-      },
-      (erro) => {
-        console.error("Erro: ",erro);
-      }
-    )
-  }
+  //   this.dados.getVeiculos().subscribe
+  //   (
+  //     (dadosrecebidos) => {
+  //       this.veiculos = dadosrecebidos;
+  //     },
+  //     (erro) => {
+  //       console.error("Erro: ",erro);
+  //     }
+  //   )
+  // }
 }

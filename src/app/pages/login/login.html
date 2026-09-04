@@ -12,16 +12,16 @@
 
             <h3>Boas-vindas</h3>
             
-            <form action="">
+            <form (ngSubmit)="login()">
 
                 <div class="campo">
                     <i class="fa-solid fa-circle-user"></i>
-                    <input required type="text" name="usuario" placeholder="Usuário" autocomplete="off">
+                    <input [(ngModel)]="usuario.nome" required type="text" name="nome" placeholder="Usuário" autocomplete="off">
                  </div>
                     
                 <div class="campo">
                     <i class="fa-solid fa-lock"></i>
-                    <input required type="password" name="senha" placeholder="Senha" autocomplete="off">
+                    <input [(ngModel)]="usuario.senha" required type="password" name="senha" placeholder="Senha" autocomplete="off">
                     <!-- <i class="fa-solid fa-eye" id="mostrarSenha"></i> -->
                 </div>
 
@@ -29,9 +29,8 @@
                     <span>Lembrar de mim</span>
                     <i class="fa-solid fa-toggle-off"></i>
                 </div>
-                
-                  
-                <button disabled>Entrar</button>
+                   
+                <button type="submit">Entrar</button>
                 
             </form>
         </div>

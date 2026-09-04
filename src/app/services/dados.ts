@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Veiculo } from '../models/veiculo.model';
+import { Usuario } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Dados {
   
-  private apiUrl = "http://localhost:3001/"
+  private apiUrl = "http://localhost:3001"
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient){}
 
-  getVeiculos():Observable<Veiculo[]>{
-    return this.http.get<Veiculo[]>(this.apiUrl);
+  login(usuario: Pick<Usuario, 'nome'|'senha'>):Observable<Usuario>{
+    return this.http.post<Usuario>(`${this.apiUrl}/login`, usuario);
   }
 }
