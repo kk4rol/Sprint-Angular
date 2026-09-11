@@ -12,7 +12,7 @@ h2 {
     font-family: "Elms sans";
     color: blue;
     text-align: center;
-    margin: 60px;
+    margin: 50px;
 }
 
 .cards {
@@ -22,11 +22,13 @@ h2 {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     width: 230px;
     height: 150px;
     background-color: white;
     border: 1px solid #ccc;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); */
 }
 
 .card select {
@@ -43,25 +45,47 @@ h2 {
     margin-left: 15px;
 }
 
-.card select:focus {
-    box-shadow: 0 0 0 1px blue;
-}
-
 .titulo {
     display: flex;
     align-items: center;
     height: 30px;
-    padding: 10px;
+    padding: 15px;
     font-weight: 500;
+    font-size: 18px;
     font-family: "Elms sans";
     background-color: rgba(128, 128, 128, 0.2);
     border: 1px solid #ccc;
 }
 
+.cardInfo {
+    font-family: "Elms sans";
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+    padding-left: 15px;
+    padding-top: 20px;
+}
+
+.unid {
+    font-family: "Elms sans";
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+.imagemCarro {
+    text-align: center;
+    max-height: 500px;
+}
+
+.imagemCarro img {
+    max-width: 65%; 
+    margin: 20px 0;
+}
+
 table {
-    position: absolute;
+    /* position: absolute;
     top: 91%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
     width: 100%;
     font-family: "Elms sans";
     text-align: left;
@@ -80,7 +104,6 @@ tr input {
     width: 250px;
     border: 1px solid #cccccc;
     padding: 5px;
-    /* margin-left: 10px; */
     height: 15px;
     font-size: 16px;
     font-family: "Elms sans";  

@@ -10,33 +10,45 @@
                     <span>Veículo</span> 
                 </div> <br>
                 
-                <select name="veiculo" id="">
-                    <option value="1">Ranger</option>
-                    <option value="2">Mustang</option>
-                    <option value="3">Territory</option>
-                    <option value="4">Bronco Sport</option>
+                <select name="veiculo" id="" (change)="veiculoSelecionado($event)">
+                    <option value="" hidden selected disabled>Escolha um modelo</option>
+                    <option *ngFor="let v of vehicles" [value]="v.id">
+                        {{v.vehicle}}
+                    </option>
                 </select>
             </div>
 
             <div class="card">
                 <div class="titulo">
                     <span>Total de Vendas</span>
-                </div>    
+                </div>
+                <span class="cardInfo">{{ selecionado?.volumetotal }}</span> 
+                <span class="unid">Unid.</span>   
             </div>
 
             <div class="card">
                 <div class="titulo">
                     <span>Conectados</span>
                 </div>
-                
+                <span class="cardInfo">{{ selecionado?.connected }}</span>
+                <span class="unid">Unid.</span>
             </div>
 
             <div class="card">
                 <div class="titulo">
                     <span>Update Software</span>
                 </div>
+                <span class="cardInfo">{{ selecionado?.softwareUpdates }}</span>
+                <span class="unid">Unid.</span>
             </div> 
         </div>
+
+
+        <div class="imagemCarro">
+            <img *ngIf="selecionado" [src]="selecionado.img" [alt]="selecionado.vehicle">
+        </div>
+
+
 
         <div>
             <table>

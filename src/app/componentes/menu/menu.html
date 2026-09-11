@@ -2,7 +2,7 @@
      <i (click)="mostrarMenu()" class="fa-solid fa-bars"></i>
 </div>
 <div class="logout">
-    <i class="fa-solid fa-circle-user"></i>
+    <i (click)="mostrarLogout()" class="fa-solid fa-circle-user"></i>
 </div>
 
 <div *ngIf="menuAberto" 
@@ -22,3 +22,7 @@
         <a href="dashboard">Dashboard</a>
     </nav>
 </aside>
+
+ <div *ngIf="logoutaberto" class="divLogout">
+    <i (click)="logout()" class="fa-solid fa-arrow-right-from-bracket"> Sair</i>
+ </div>

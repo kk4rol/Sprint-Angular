@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Dados } from '../../services/dados';
+import { Auth } from '../../services/auth';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,10 +17,10 @@ export class Login {
     senha: ''
   }
 
-  constructor(private dados:Dados, private router:Router){}
+  constructor(private auth:Auth, private router:Router){}
 
   login(){
-    this.dados.login(this.usuario).subscribe({
+    this.auth.login(this.usuario).subscribe({
       next:(response) => {
        this.router.navigate(['/home']); 
       },

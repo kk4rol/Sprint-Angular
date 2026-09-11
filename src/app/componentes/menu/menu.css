@@ -15,7 +15,7 @@
     top: 3%;
     transform: translateY(-50%);
     color: #00095b;
-    font-size: 22px;
+    font-size: 28px;
     cursor: pointer;
 }
 
@@ -107,3 +107,30 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.divLogout {
+  height: 60px;
+  width: 200px;
+  position: absolute;
+  top: 5%;
+  left: 86%;
+  display: flex;
+  /* align-items: center; */
+  background-color: rgba(187, 183, 183, 0.8);
+  border-radius: 4px; 
+  padding: 28px;
+  font-family: "Elms sans";
+}
+
+.divLogout i {
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.divLogout i:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+
+
