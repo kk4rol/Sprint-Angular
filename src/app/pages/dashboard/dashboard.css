@@ -73,13 +73,15 @@ h2 {
 }
 
 .imagemCarro {
-    text-align: center;
-    max-height: 500px;
+    height: 53vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagemCarro img {
-    max-width: 65%; 
-    margin: 20px 0;
+    max-height: 45vh; 
+    object-fit: contain;
 }
 
 table {
@@ -99,7 +101,7 @@ th {
     padding-left: 10px;
 }
 
-tr input {
+td input {
     color: #807d7d;
     width: 250px;
     border: 1px solid #cccccc;
@@ -107,4 +109,9 @@ tr input {
     height: 15px;
     font-size: 16px;
     font-family: "Elms sans";  
+}
+
+td button {
+    width: auto;
+
 }

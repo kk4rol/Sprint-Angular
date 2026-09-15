@@ -98,9 +98,15 @@
     transition: 0.3s;
 }
 
+.menuLateral a.paginaAtiva {
+  background-color: rgba(0, 0, 149, 0.08);
+  color: #00095b;
+  border-left: 3px solid #00095b;
+}
+
 .menuLateral a:hover {
     color: #00095b;
-    border-left: 3px solid #00095b;
+    /* border-left: 3px solid #00095b; */
     }
 
 @media screen and (max-height: 450px) {
@@ -110,13 +116,13 @@
 
 .divLogout {
   height: 60px;
-  width: 200px;
+  width: 150px;
   position: absolute;
   top: 5%;
-  left: 86%;
+  left: 88%;
   display: flex;
-  /* align-items: center; */
   background-color: rgba(187, 183, 183, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   border-radius: 4px; 
   padding: 28px;
   font-family: "Elms sans";

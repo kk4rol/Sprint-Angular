@@ -50,7 +50,6 @@
 
 
 
-        <div>
             <table>
                 <tr>
                     <th style="width: 20%;">Código - Vin</th>
@@ -61,8 +60,11 @@
                     <th style="width: 16%;">Long.</th>
                 </tr>
                 <tr style="height: 70px; padding-left: 10px;">
-                    <td style="text-align: center;"><input type="text" name="codigo"></td>
-                    <td></td>
+                    <td style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                        <input type="text" name="codigo"> 
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </td>
+                    <!-- <td *ngFor="let s of veiculosInfo">{{s.odometro}}</td> -->
                     <td></td>
                     <td></td>
                     <td></td>
@@ -77,5 +79,4 @@
                     <td></td>
                 </tr>
             </table>
-        </div>
     </main>
