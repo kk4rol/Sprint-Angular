@@ -1,33 +1,34 @@
 .menu i {
-    position: fixed;
-    left: 16px;
-    top: 3%;
+    position: absolute;
+    left: clamp(12px, 1.2vw, 24px);
+    top: clamp(20px, 3vh, 35px);
     transform: translateY(-50%);
     color: #00095b;
-    font-size: 22px;
+    font-size: clamp(20px, 1.5vw, 24px);
     cursor: pointer;
     z-index: 1000;
 }
 
 .logout i {
-    position: absolute;
-    right: 16px;
-    top: 3%;
+    position: fixed;
+    right: clamp(12px, 1.2vw, 24px);
+    top: clamp(20px, 3vh, 35px);
     transform: translateY(-50%);
     color: #00095b;
-    font-size: 28px;
+    font-size: clamp(25px, 1.8vw, 30px);
     cursor: pointer;
 }
 
 .menuLateral {
   height: 100vh;
-  width: 250px;
+  width: clamp(220px, 18vw, 280px);
   position: fixed;
   z-index: 999;
   top: 0;
   left: 0;
   background-color: white;
   padding-top: 60px;
+  box-sizing: border-box;
 }
 
 .menu-entrando {
@@ -83,49 +84,46 @@
 }
 
 .menuLateral img {
-    width: 120px;
-    padding-left: 25%;
-    padding-bottom: 10px;
+    display: block;
+    width: clamp(90px, 8vw, 120px);
+    margin: 0 auto;
+    padding: 0 0 10px;
 }
 
 .menuLateral a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-family: "Elms sans";
-    font-size: 22px;
+    font-size: clamp(18px, 1.4vw, 22px);
     color: #818181;
     display: block;
     transition: 0.3s;
 }
 
 .menuLateral a.paginaAtiva {
-  background-color: rgba(0, 0, 149, 0.08);
-  color: #00095b;
-  border-left: 3px solid #00095b;
+    background-color: rgba(0, 0, 149, 0.08);
+    color: #00095b;
+    border-left: 3px solid #00095b;
 }
 
 .menuLateral a:hover {
     color: #00095b;
-    /* border-left: 3px solid #00095b; */
-    }
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
 }
 
 .divLogout {
-  height: 60px;
-  width: 150px;
-  position: absolute;
-  top: 5%;
-  left: 88%;
+  min-height: 60px;
+  width: min(150px, 35vw);
+  position: fixed;
+  top: 55px;
+  right: clamp(12px, 1.5vw, 30px);
   display: flex;
   background-color: rgba(187, 183, 183, 0.8);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   border-radius: 4px; 
-  padding: 28px;
+  padding: 20px;
   font-family: "Elms sans";
+  box-sizing: border-box;
+  z-index: 1001;
 }
 
 .divLogout i {
@@ -136,6 +134,46 @@
 .divLogout i:hover {
   cursor: pointer;
   color: blue;
+}
+
+
+@media screen and (max-height: 450px) {
+
+    .menuLateral {padding-top: 15px;}
+
+    .menuLateral a {font-size: 18px;}
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .menuLateral {
+        width: 230px;
+    }
+
+    .menuLateral a {
+        padding-left: 25px;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .menuLateral {
+        width: min(80vw, 280px);
+    }
+
+    .menuLateral a {
+        font-size: 19px;
+        padding-left: 25px;
+    }
+
+    .divLogout {
+        width: 140px;
+        right: 10px;
+    }
+
 }
 
 

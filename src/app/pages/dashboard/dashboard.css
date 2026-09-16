@@ -1,11 +1,15 @@
 
 body {
-    height: 100vh;  
+    min-height: 100vh;  
 }
 
 main {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 3vw;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -16,24 +20,27 @@ h2 {
 }
 
 .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(180px, 230px));
     justify-content: center;
-    gap: 100px;
+    gap: clamp(200px, 5vw, 100px);
+    width: 100%;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    width: 230px;
+    width: 100%;
     height: 150px;
     background-color: white;
     border: 1px solid #ccc;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); */
+    box-sizing: border-box;
 }
 
 .card select {
     color: #807d7d;
-    width: 200px;
+    width: calc(100% - 30px);
     border: 1px solid #cccccc;
     border-radius: 10px;
     padding: 5px;
@@ -43,23 +50,25 @@ h2 {
     font-family: "Elms sans";
     margin-top: 10px;
     margin-left: 15px;
+    box-sizing: border-box;
 }
 
 .titulo {
     display: flex;
     align-items: center;
-    height: 30px;
+    min-height: 30px;
     padding: 15px;
     font-weight: 500;
     font-size: 18px;
     font-family: "Elms sans";
     background-color: rgba(128, 128, 128, 0.2);
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 .cardInfo {
     font-family: "Elms sans";
-    font-size: 24px;
+    font-size: clamp(20px, 1.5vw, 24px);
     font-weight: bold;
     color: blue;
     padding-left: 15px;
@@ -73,24 +82,58 @@ h2 {
 }
 
 .imagemCarro {
+    width: 100%;
     height: 53vh;
+    min-height: 300px;
+    max-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .imagemCarro img {
+    max-width: 80%;
     max-height: 45vh; 
     object-fit: contain;
 }
 
-table {
-    /* position: absolute;
-    top: 91%;
-    transform: translateY(-50%); */
+.tabelaContainer {
     width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
     font-family: "Elms sans";
     text-align: left;
+}
+
+.coluna-vin {
+    width: 20%;
+}
+
+.coluna-odometro {
+    width: 15%;
+}
+
+.coluna-combustivel {
+    width: 18%;
+}
+
+.coluna-status {
+    width: 10%;
+}
+
+.coluna-lat {
+    width: 16%;
+}
+
+.coluna-long {
+    width: 16%;
 }
 
 th {
@@ -98,20 +141,146 @@ th {
     color: white;
     background-color: #00095b;
     height: 50px;
-    padding-left: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.linhaDados {
+    height: 70px;
+}
+
+.linhaDados td:first-child {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+td {
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 td input {
-    color: #807d7d;
-    width: 250px;
+    width: min(250px, 80%);
     border: 1px solid #cccccc;
     padding: 5px;
-    height: 15px;
+    height: 30px;
     font-size: 16px;
     font-family: "Elms sans";  
+    box-sizing: border-box;
 }
 
 td button {
-    width: auto;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: #807d7d;
+}
+
+.vinInfos {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1100px) {
+
+.cards {
+    grid-template-columns:
+        repeat(2, minmax(180px, 230px));
+
+    gap: 25px;
+}
+
+
+.imagemCarro {
+    height: 45vh;
+
+    min-height: 280px;
+}
+
+
+.imagemCarro img {
+    max-height: 38vh;
+}
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+main {
+    padding: 0 15px;
+}
+
+
+h2 {
+    margin: 25px 0;
+
+    font-size: 24px;
+}
+
+
+.cards {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+}
+
+
+.card {
+    width: 100%;
+
+    max-width: 350px;
+
+    margin: 0 auto;
+}
+
+
+.imagemCarro {
+    height: 35vh;
+
+    min-height: 220px;
+}
+
+
+.imagemCarro img {
+    max-width: 90%;
+
+    max-height: 30vh;
+}
+
+
+table {
+    min-width: 750px;
+}
+
+
+}
+
+
+@media screen and (max-width: 400px) {
+
+h2 {
+    font-size: 21px;
+}
+
+
+.card {
+    max-width: 100%;
+}
+
+
+.titulo {
+    font-size: 16px;
+}
+
+
+.cardInfo {
+    font-size: 21px;
+}
+
 
 }

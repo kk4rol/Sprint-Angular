@@ -18,6 +18,8 @@ export class Dashboard {
   selecionado: Veiculo | null = null;
   digitado: VeiculosAPI | null = null;
 
+  vinDigitado: string = '';
+
   constructor(private vehicle:Vehicle, private data:Data){}
 
   ngOnInit():void{
@@ -37,30 +39,28 @@ export class Dashboard {
       this.selecionado = null;
     }
   }
+
+  codigoDigitado(event:Event):void{
+    this.vinDigitado = (event.target as HTMLInputElement).value;
+  }
+
+  buscarInfos():void{
+
+    if(!this.vinDigitado.trim()) {
+      return;
+    }
+    
+    this.data.getVeiculosInfo(this.vinDigitado).subscribe({
+      next: (dadosRecebidos) => {
+        this.digitado = dadosRecebidos;
+        console.log("Dados recebidos:", dadosRecebidos);
+      },
+      error: (erro) => {
+        console.error("Erro ao buscar veículo:", erro);
+        this.digitado = null;
+      }
+    });
+  }
+
 }
 
-//   codigoDigitado(event:Event):void{
-//     const vinDigitado = (event.target as HTMLButtonElement).value;
-
-//   //   if(vinDigitado){
-//   //     this.data.digitado.subscribe({
-
-//   //     )
-//   //   } else {
-//   //     this.digitado = null;
-//   //   }
-//   // }
-
-//   // public veiculosInfo:VeiculosAPI = ;
-
-//   // buscarInfos():void{
-//   //   this.data.getVeiculosInfo().subscribe(
-//   //     (dadosRecebidos) => {
-//   //       this.veiculosInfo = dadosRecebidos;
-//   //     },
-//   //     (erro) => {
-//   //       console.error("Erro", erro);
-//   //     }
-//   //   )
-//   // }
-// }

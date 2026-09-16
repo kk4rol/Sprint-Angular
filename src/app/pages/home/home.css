@@ -1,47 +1,124 @@
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("/img/fundotalvez.jpg");
     background-size: 70%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 main {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 40px 3vw;
+    box-sizing: border-box;
 }
 
 .cardApresentacao {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 800px;
-    height: 680px;
+    width: min(800px, 90vw);
+    height: min(680px, 80vh);
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
 }
 
 #titulo {
     display: flex;
     align-items: center;
-    height: 30px;
+    min-height: 30px;
     padding: 10px;
-    font-size: 18px;
+    font-size: clamo(16px, 1.2vw, 18px);
     font-weight: 500;
     font-family: "Elms sans";
     background-color: rgba(128, 128, 128, 0.2);
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }    
 
 #bemVindo {
+    display: block;
     color: blue;
-    font-size: 18px;
+    font-size: clamp(16px, 1.2vw, 18px);
     font-weight: 500;
     font-family: "Elms sans";
     padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    section {
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+    .cardApresentacao {
+        width: 90vw;
+        height: 75vh;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    section {
+        background-size: cover;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    .cardApresentacao {
+        width: 100%;
+        height: 75vh;
+        min-height: 400px;
+    }
+
+    #titulo {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #bemVindo {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+}
+
+
+@media screen and (max-width: 360px) {
+
+    .cardApresentacao {
+        height: 70vh;
+        min-height: 350px;
+    }
+
+    #titulo {
+        font-size: 15px;
+    }
+
+    #bemVindo {
+        font-size: 15px;
+    }
+
 }
